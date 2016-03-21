@@ -26,15 +26,18 @@
         var input = document.getElementById("aqi-input");
         btn.addEventListener("click",function () {
 
-            if(input.length.value != 0) {
-                if (Element.innerText)//区分是否支持innerText
-                    display.innerText = input;
-                if (Element.textContent)
-                    display.textContent = input;
+            if(input.value.length != 0) {
+                if (display.innerText)//区分是否支持innerText
+                {
+                    display.innerText = input.value;
+
+                }
+                if (display.textContent)
+                    display.textContent = input.value;
             }
 
             
-        },false)
+        },false);
 
     })();
 
