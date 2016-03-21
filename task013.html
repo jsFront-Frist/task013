@@ -27,13 +27,15 @@
         btn.addEventListener("click",function () {
 
             if(input.value.length != 0) {
-                if (display.innerText)//区分是否支持innerText
+                if ("innerText" in display)//区分是否支持innerText
                 {
                     display.innerText = input.value;
 
+
                 }
-                if (display.textContent)
+                if ("textContent" in display)
                     display.textContent = input.value;
+
             }
 
             
