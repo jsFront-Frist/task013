@@ -24,7 +24,18 @@
         var btn = document.getElementById("button");
         var display = document.getElementById("aqi-display");
         var input = document.getElementById("aqi-input");
-        btn.addEventListener("click",function () {
+        //兼容旧版本IE
+        function addEvent(target, type , handler){
+            if(target.addEventListener)
+                    target.addEventListener(type,handler,false);
+            else
+                    target.attachEvent("on"+type,function (event){
+                        return handler.call(target,event);
+                    } );
+        }
+
+
+       addEvent(btn,"click",function () {
 
             if(input.value.length != 0) {
                 if ("innerText" in display)//区分是否支持innerText
